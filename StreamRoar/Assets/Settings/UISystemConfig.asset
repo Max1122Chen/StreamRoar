@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a577a57093cea48848ca734c99063654, type: 3}
+  m_Name: UISystemConfig
+  m_EditorClassIdentifier:
+  Root:
+    RootName: UIRoot
+    CameraResolveMode: 0
+    CameraTag: MainCamera
+    PlaneDistance: 100
+    ReferenceResolution: {x: 1920, y: 1080}
+    MatchWidthOrHeight: 0.5
+  Layers:
+  - LayerId: Background
+    RenderMode: 1
+    SortingOrder: 100
+    HasGraphicRaycaster: 1
+  - LayerId: Normal
+    RenderMode: 1
+    SortingOrder: 200
+    HasGraphicRaycaster: 1
+  - LayerId: Popup
+    RenderMode: 1
+    SortingOrder: 300
+    HasGraphicRaycaster: 1
+  - LayerId: Top
+    RenderMode: 1
+    SortingOrder: 400
+    HasGraphicRaycaster: 1
+  Scopes:
+  - Menu
+  - Gameplay
+  - None
+  SceneMappings:
+  - SceneName: Launch
+    ScopeId: None
+  - SceneName: SampleScene
+    ScopeId: Gameplay
+  Panels: []
+  Windows: []
+  Popups: []
+  Widgets: []
+  PrefabSearchPath: Assets/ResourcesAssets/UI
+  GlobalElements: []
+  ScopeElements: []

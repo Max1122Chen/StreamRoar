@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153a0e23a49447d9bd85cc1d783cbf33, type: 3}
+  m_Name: SfxBus
+  m_EditorClassIdentifier: Assembly-CSharp::StreamRoar.Infrastructure.AudioBus
+  m_Output: {fileID: 6295934957933362394, guid: e3ab184c0636749e79036358283175ef, type: 2}
+  m_VolumeParameter: SfxVolume

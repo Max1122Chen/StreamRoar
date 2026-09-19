@@ -1,0 +1,90 @@
+{
+    "FileVersion": "2025.9.30",
+    "EnableAddressable": true,
+    "SupportExtensionless": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "ReplaceAssetPathWithAddress": false,
+    "OutputNameStyle": 0,
+    "BuildBundleType": 1,
+    "BuildPipeline": "EditorSimulateBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "Simulate",
+    "PackageNote": "9/19/2026 11:52:21 PM",
+    "AssetList": [
+        {
+            "Address": "MusicBus",
+            "AssetPath": "Assets/ResourcesAssets/Audio/Buses/MusicBus.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "SfxBus",
+            "AssetPath": "Assets/ResourcesAssets/Audio/Buses/SfxBus.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "GameAudioMixer",
+            "AssetPath": "Assets/ResourcesAssets/Audio/Mixers/GameAudioMixer.mixer",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "TbTest",
+            "AssetPath": "Assets/ResourcesAssets/Configs/TbTest.bytes",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3,
+            "DependBundleIDs": []
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_resourcesassets_audio_buses_musicbus.bundle",
+            "UnityCRC": 0,
+            "FileHash": "3d12f53c16b3c39c141065d493c1e392",
+            "FileCRC": 0,
+            "FileSize": 573,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_resourcesassets_audio_buses_sfxbus.bundle",
+            "UnityCRC": 0,
+            "FileHash": "2e11a69f6995075e8a03e0be88669469",
+            "FileCRC": 0,
+            "FileSize": 568,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_resourcesassets_audio_mixers_gameaudiomixer.bundle",
+            "UnityCRC": 0,
+            "FileHash": "fd292289571126d97d0901b0e1ee099c",
+            "FileCRC": 0,
+            "FileSize": 3890,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_resourcesassets_configs_tbtest.bundle",
+            "UnityCRC": 0,
+            "FileHash": "27e1945daa92cacf05d1f508a6fe8463",
+            "FileCRC": 0,
+            "FileSize": 25,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        }
+    ]
+}
