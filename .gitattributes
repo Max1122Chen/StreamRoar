@@ -1,0 +1,19 @@
+* text=auto eol=lf
+
+*.cs text diff=csharp eol=lf
+*.shader text eol=lf
+*.cginc text eol=lf
+*.hlsl text eol=lf
+*.compute text eol=lf
+
+*.meta text linguist-language=yaml eol=lf
+*.unity text linguist-language=yaml eol=lf
+*.prefab text linguist-language=yaml eol=lf
+*.asset text linguist-language=yaml eol=lf
+*.mat text linguist-language=yaml eol=lf
+*.anim text linguist-language=yaml eol=lf
+*.controller text linguist-language=yaml eol=lf
+*.overrideController text linguist-language=yaml eol=lf
+*.mask text linguist-language=yaml eol=lf
+*.playable text linguist-language=yaml eol=lf
+*.preset text linguist-language=yaml eol=lf
