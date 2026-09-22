@@ -1,5 +1,82 @@
-# OS junk
+# OS generated files
 .DS_Store
+.AppleDouble
+.LSOverride
 Thumbs.db
 Desktop.ini
 ehthumbs.db
+
+# Editor and tool caches
+.vscode/
+.vs/
+.consulo/
+.gradle/
+.utmp/
+ExportedObj/
+*.DotSettings.user
+
+# Unity generated project and temporary files
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+*.log
+sysinfo.txt
+mono_crash.*
+crashlytics-build.properties
+InitTestScene*.unity*
+
+# Unity generated folders (project root: StreamRoar/)
+/StreamRoar/[Ll]ibrary/
+/StreamRoar/[Tt]emp/
+/StreamRoar/[Oo]bj/
+/StreamRoar/[Bb]uild/
+/StreamRoar/[Bb]uilds/
+/StreamRoar/[Ll]ogs/
+/StreamRoar/[Uu]ser[Ss]ettings/
+/StreamRoar/[Mm]emoryCaptures/
+/StreamRoar/[Rr]ecordings/
+/StreamRoar/UIElementsSchema/
+
+# Build artifacts and Blender backups
+*.apk
+*.aab
+*.ipa
+*.app
+*.unitypackage
+*.unitypackage.meta
+*.blend1
+*.blend1.meta
+
+# YooAsset generated build and simulation output
+/StreamRoar/Bundles/
+/StreamRoar/Assets/StreamingAssets/yoo/
+/StreamRoar/Assets/StreamingAssets/yoo.meta
+
+# Addressables generated content
+/StreamRoar/ServerData/
+/StreamRoar/Assets/StreamingAssets/aa*
+/StreamRoar/Assets/AddressableAssetsData/link.xml*
+/StreamRoar/Assets/Addressables_Temp*
+/StreamRoar/Assets/AddressableAssetsData/*/*.bin*
+
+# Unity and plugin generated files
+/StreamRoar/Assets/Plugins/Editor/JetBrains*
+/StreamRoar/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db*
+/StreamRoar/Assets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers*
+/StreamRoar/Assets/[Ii]nit[Tt]est[Ss]cene*.unity*
+/StreamRoar/Assets/[Ss]ceneDependencyCache*

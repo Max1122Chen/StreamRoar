@@ -1,0 +1,21 @@
+#!/bin/sh
+# 只检查标题，不改写提交信息。
+set -eu
+
+title=$(head -n 1 "$1" | tr -d '\r')
+pattern='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([A-Za-z0-9._/-]+\))?!?: [^[:space:]].*$'
+
+if printf '%s\n' "$title" | LC_ALL=C grep -Eq "$pattern"; then
+    exit 0
+fi
+
+cat >&2 <<'EOF'
+提交标题格式不正确，应为 type: 描述（英文冒号和一个空格）。
+允许类型：feat fix docs style refactor perf test build ci chore revert
+示例：
+  feat: 添加目标锁定
+  fix(combat): 修复攻击取消窗口
+  refactor!: 调整角色初始化接口
+合并和回滚提交也需使用上述格式，例如 chore: 合并开发分支。
+EOF
+exit 1

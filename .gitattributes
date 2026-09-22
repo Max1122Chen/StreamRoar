@@ -1,19 +1,34 @@
+# Default to LF for detected text; leave binary content untouched.
 * text=auto eol=lf
 
+# Scripts used across macOS and Windows
+*.sh text eol=lf
+.githooks/* text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Unity source and UI Toolkit
 *.cs text diff=csharp eol=lf
 *.shader text eol=lf
 *.cginc text eol=lf
 *.hlsl text eol=lf
 *.compute text eol=lf
+*.uss text linguist-language=css eol=lf
+*.uxml text linguist-language=xml eol=lf
 
+# Unity serialization (Force Text). Some .asset files can still be binary.
 *.meta text linguist-language=yaml eol=lf
 *.unity text linguist-language=yaml eol=lf
 *.prefab text linguist-language=yaml eol=lf
-*.asset text linguist-language=yaml eol=lf
+*.asset text=auto linguist-language=yaml eol=lf
 *.mat text linguist-language=yaml eol=lf
 *.anim text linguist-language=yaml eol=lf
 *.controller text linguist-language=yaml eol=lf
 *.overrideController text linguist-language=yaml eol=lf
 *.mask text linguist-language=yaml eol=lf
+*.mixer text linguist-language=yaml eol=lf
 *.playable text linguist-language=yaml eol=lf
 *.preset text linguist-language=yaml eol=lf
+
+# Luban/YooAsset binary payloads must never undergo line-ending conversion.
+*.bytes binary
