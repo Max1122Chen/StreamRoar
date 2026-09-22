@@ -4,7 +4,8 @@
 
 ## 基础用法
 
-当前 `ApplicationController` 默认注册只读取真实 `Assets/Resources` 布局的 `ResourcesAssetProvider`，也可切换为 `YooAssetProvider`。资源 key 使用资源后端约定：`Resources/VFX/HitSpark.prefab` 在 Resources 模式下对应 `VFX/HitSpark`，在 YooAsset 模式下使用 Collector 发布的资源地址。
+资源 key 使用资源后端约定：`Resources/VFX/HitSpark.prefab` 在 Resources 模式下对应 `VFX/HitSpark`，在 YooAsset 模式下使用 Collector 发布的资源地址。
+由调用方在资源后端初始化完成后调用示例的 `Initialize`，传入资源服务与实际 key；不要在资源仍在初始化时预热。
 
 ```csharp
 using StreamRoar.Infrastructure;
@@ -16,13 +17,11 @@ public sealed class HitVfxSpawner : MonoBehaviour
 
     PrefabPool<ParticleSystem> m_HitVfxPool;
 
-    void Awake()
+    public void Initialize(IAssetProvider assets, string assetKey)
     {
-        IAssetProvider assets = ServiceLocator.Resolve<IAssetProvider>();
-
         m_HitVfxPool = new PrefabPool<ParticleSystem>(
             assets,
-            "VFX/HitSpark",
+            assetKey,
             m_PoolRoot,
             initialCapacity: 8,
             minCachedCount: 2

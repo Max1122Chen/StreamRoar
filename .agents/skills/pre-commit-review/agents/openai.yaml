@@ -1,4 +1,4 @@
 interface:
-  display_name: "暂存区代码评审"
-  short_description: "评审 StreamRoar 暂存区功能代码并生成中文提交建议"
-  default_prompt: "使用 $pre-commit-review 评审 StreamRoar 已暂存的功能代码，按优先级输出中文结论和 Commit 标题建议。"
+  display_name: "暂存区验收"
+  short_description: "评审 StreamRoar 暂存区功能与文档改动并生成中文提交建议"
+  default_prompt: "使用 $pre-commit-review 评审 StreamRoar 已暂存的功能代码与 docs 文档改动，按优先级输出中文结论和 Commit 标题建议。"
