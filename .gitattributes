@@ -3,6 +3,7 @@
 
 # Scripts used across macOS and Windows
 *.sh text eol=lf
+.githooks/* text eol=lf
 *.bat text eol=crlf
 *.cmd text eol=crlf
 
