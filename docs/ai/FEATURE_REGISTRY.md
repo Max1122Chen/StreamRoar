@@ -6,7 +6,7 @@ Domain 词汇表见 `PROJECT_CONTEXT.md` §7：`INFRA` / `UI` / `GAME` / `AUDIO`
 
 | Feature ID | Title | Domain | Status | Design Doc | Implementation Plan | Owner | Notes |
 |------------|-------|--------|--------|------------|---------------------|-------|-------|
-| `INFRA-F01` | Unity Test 框架与测试规则 | INFRA | In Progress | [design](./INFRA/INFRA-F01_UNITY_TEST_FRAMEWORK_DESIGN.md) | [plan](./INFRA/INFRA-F01_UNITY_TEST_FRAMEWORK_IMPLEMENTATION.md) | Max | S01–S03 已实现；S04 PlayMode Deferred；待作者 Unity 跑测 + 用户 review |
+| `INFRA-F01` | Unity Test 框架与测试规则 | INFRA | In Progress | [design](./INFRA/INFRA-F01_UNITY_TEST_FRAMEWORK_DESIGN.md) | [plan](./INFRA/INFRA-F01_UNITY_TEST_FRAMEWORK_IMPLEMENTATION.md) | Max | 不拆 Core；`Assets/Tests/Editor` 样板；待 Unity 跑测 + review |
 | `INFRA-F02` | GameplayTag 生态 | INFRA | Draft | [design](./INFRA/INFRA-F02_GAMEPLAY_TAG_DESIGN.md) | — | Max | 等 F01 review 后实施 |
 | `INFRA-F03` | PlayerController / Input System 中枢 | INFRA | Draft | [design](./INFRA/INFRA-F03_PLAYER_CONTROLLER_INPUT_DESIGN.md) | — | Max | 等 F01 review 后实施 |
 | `TOOL-F01` | DebugConsole（严格命令集） | TOOL | Draft | [design](./TOOL/TOOL-F01_DEBUG_CONSOLE_DESIGN.md) | — | Max | 建议接在 F03 Freeze 后 |

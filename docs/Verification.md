@@ -7,7 +7,7 @@
 | 改动 | 合适的证据 |
 | --- | --- |
 | 纯文档、技能说明 | 路径和链接、代码事实、指令是否冲突；无需启动 Unity |
-| Infrastructure Core 契约（Locator / EventBus / Save 等） | **优先** `StreamRoar.Tests.EditMode` 相关用例全绿；再按需补手工路径 |
+| Infrastructure Core 契约（Locator / EventBus / Save 等） | **优先** `Assets/Tests/Editor` 相关 EditMode 用例全绿；再按需补手工路径 |
 | 其他 C# 行为 | Unity 导入/编译，以及受影响的最小 Editor 或 Play Mode 路径 |
 | Prefab、场景等序列化资产 | Unity 加载/反序列化、受影响引用与运行行为 |
 | 运行时生命周期 | 创建、禁用/释放、重新绑定或复用中受影响的路径 |
@@ -18,7 +18,7 @@ rg、YAML 和 dotnet build 均不证明运行时正确。MSB3644 表示缺少引
 
 ## 自动化（EditMode）
 
-- 程序集：`StreamRoar.Tests.EditMode`（`Assets/Tests/EditMode/`）
+- 路径：`Assets/Tests/Editor/`（Editor 程序集，不改动 Infrastructure 目录结构）
 - 入口：Window → General → Test Runner → EditMode
 - 样板覆盖：`ServiceLocator`、`EventBus`、`JsonSaveService`
 - 规则全文：[Testing](Testing.md)

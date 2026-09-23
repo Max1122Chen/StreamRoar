@@ -4,17 +4,24 @@
 
 ## 2026-09-23
 
+- Scope: `INFRA-F01` 调整
+- Completed:
+  - 撤销 `Infrastructure/Core` 拆分，恢复伙伴原有 Events/Save/ServiceLocator 布局
+  - 测试改挂 `Assets/Tests/Editor/`（Editor 程序集），去掉生产 asmdef
+  - `ClearForTests` 保留为测试专用公开 API
+- Verification:
+  - 待 Unity 编译 + Test Runner
+- Next action:
+  - 用户 review F01 后继续 F02
+
+## 2026-09-23
+
 - Scope: `INFRA-F01` / `INFRA-F01-S01..S03`
 - Completed:
-  - 抽出 `StreamRoar.Infrastructure.Core`（ServiceLocator / Events / Save）
-  - 新增 `StreamRoar.Tests.EditMode` 与三类样板测试；`ServiceLocator.ClearForTests` + InternalsVisibleTo
-  - 文档：`docs/Testing.md`，更新 Verification / README / PROJECT_CONTEXT / AGENTS / API 路径
-  - Implementation Plan 落地；Design Open Questions 按 Core 方案决议
+  - （已由后续调整取代：原 Core asmdef 方案）
+  - 新增 EditMode 样板测试与 Testing 文档
 - Verification:
-  - 静态：路径与 asmdef/测试源文件就位
-  - **待用户本地**：Unity 编译 + Test Runner EditMode 全绿（本环境未启动 Unity）
-- Docs updated:
-  - F01 design/impl、FEATURE_REGISTRY、ACTIVE_WORK、PROGRESS_LOG
+  - 见上一条调整说明
 - Next action:
   - 用户 review F01；通过后开始 `INFRA-F02`
 

@@ -171,7 +171,7 @@ docs/
 
 ## Open Questions
 
-1. 生产代码是否立即拆 asmdef，还是 Tests 暂时引用较宽程序集？— **Resolved：最小 Core asmdef（Locator/Events/Save）**
+1. 生产代码是否立即拆 asmdef，还是 Tests 暂时引用较宽程序集？— **Resolved：不拆 Core / 不改 Infrastructure 布局；Editor 测试直接挂运行时脚本**
 2. 是否本阶段写 batchmode 脚本？— **Deferred**
 3. PlayMode 烟测是否纳入 F01 同一 PR？— **Deferred（S04）**
 

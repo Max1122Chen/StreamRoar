@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using NUnit.Framework;
 using StreamRoar.Infrastructure;
 
-namespace StreamRoar.Tests.EditMode.Infrastructure
+namespace StreamRoar.Tests.Editor.Infrastructure
 {
     [TestFixture]
     [Category("Infrastructure")]

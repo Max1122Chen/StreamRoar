@@ -1,8 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-
-[assembly: InternalsVisibleTo("StreamRoar.Tests.EditMode")]
 
 namespace StreamRoar.Infrastructure
 {
@@ -37,9 +34,9 @@ namespace StreamRoar.Infrastructure
         }
 
         /// <summary>
-        /// 仅供 EditMode 测试隔离使用；生产代码禁止调用。
+        /// 清空全部注册项。仅供 EditMode 测试隔离；正式业务代码禁止调用。
         /// </summary>
-        internal static void ClearForTests()
+        public static void ClearForTests()
         {
             s_Services.Clear();
         }
