@@ -1,6 +1,6 @@
 # StreamRoar 当前架构
 
-当前已提供资源、事件、时间、对象池、UI、VFX、Audio、Save 和场景导航基础设施。
+当前已提供资源、事件、时间、对象池、UI、VFX、Audio、Save、场景导航与 GameplayTag 基础设施。
 Gameplay 尚无具体业务脚本；基础设施中存在接口或实现，不代表已完成业务接入。
 
 ## 启动与服务
@@ -10,7 +10,7 @@ Unity 项目根是 `StreamRoar/`，当前版本为 2022.3.62f3c1。
 
 ```text
 ApplicationController
-├── Awake：注册 Timer / GameTime / EventBus / Assets / Audio / Save / Vfx / Scene
+├── Awake：注册 Timer / GameTime / EventBus / Assets / Audio / Save / Vfx / Scene / GameplayTag
 ├── Start：等待 YooAsset 就绪 -> Boot UI -> 加载 SampleScene
 ├── Update：启动完成后驱动 Timer / GameTime / Audio
 └── OnDestroy：关闭 UI、注销服务、释放场景监听/事件/VFX/音频/资源并恢复时间
