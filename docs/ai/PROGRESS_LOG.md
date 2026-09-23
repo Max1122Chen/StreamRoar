@@ -4,6 +4,24 @@
 
 ## 2026-09-23
 
+- Scope: `INFRA-F01` / `INFRA-F02` / `INFRA-F03` / `TOOL-F01`（设计稿）
+- Completed:
+  - 注册四项预 GameJam 基础设施 Feature
+  - 撰写 Design Spec（均为 `Draft`，Review `Pending`）：
+    - `docs/ai/INFRA/INFRA-F01_UNITY_TEST_FRAMEWORK_DESIGN.md`
+    - `docs/ai/INFRA/INFRA-F02_GAMEPLAY_TAG_DESIGN.md`
+    - `docs/ai/INFRA/INFRA-F03_PLAYER_CONTROLLER_INPUT_DESIGN.md`
+    - `docs/ai/TOOL/TOOL-F01_DEBUG_CONSOLE_DESIGN.md`
+  - 更新 `FEATURE_REGISTRY.md`、`ACTIVE_WORK.md`
+- Verification:
+  - 文档路径与交叉链接检查；未写代码
+- Docs updated:
+  - 如上
+- Next action:
+  - 用户评审四份设计；确认各文 Open Questions 后给 Design Review Verdict
+
+## 2026-09-23
+
 - Scope: 工作流初始化（非玩法 Feature）
 - Completed:
   - 从 `min-agent-workflows`（`feat/engineering-design-workflow`）拷入 `docs/ai/` 核心与多 Agent 适配层
