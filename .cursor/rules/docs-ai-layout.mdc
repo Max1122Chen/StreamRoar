@@ -1,0 +1,45 @@
+---
+description: Keep collaboration docs structured and discoverable.
+alwaysApply: true
+---
+
+# Docs AI Layout
+
+## Core file roles
+
+- `docs/ai/WORKFLOW_PROFILE.md` - deploy-time collaboration posture
+- `docs/ai/PROJECT_CONTEXT.md` - stable project snapshot
+- `docs/ai/BOOTSTRAP_DIGEST.md` - short session recovery
+- `docs/ai/ACTIVE_WORK.md` - active queue
+- `docs/ai/FEATURE_REGISTRY.md` - feature registration
+- `docs/ai/PROGRESS_LOG.md` - append-only factual history
+- `docs/ai/TECH_DEBT.md` - explicit debt
+- `docs/ai/templates/` - reusable doc templates
+- `docs/ai/templates/WORKFLOW_PRESETS.md` - preset catalog
+
+## Naming guidance
+
+- Feature IDs: `<DOMAIN>-F<nn>`
+- Slice IDs: `<FeatureID>-S<nn>`
+- Bug IDs: `BUG-<DOMAIN>-<nnn>`
+- ADR IDs: `ADR-<yyyyMMdd>-<nn>`
+
+### Long-doc filenames (required, ALL CAPS)
+
+```text
+docs/ai/<DOMAIN>/<FEATURE_ID>_<SLUG>_<DOC_TYPE>.md
+```
+
+- `<DOC_TYPE>`: `DESIGN` | `IMPLEMENTATION` | `ROADMAP` | `REFACTOR_PLAN`
+- Entire filename is ALL CAPS
+- `<FEATURE_ID>` must match the registry ID
+- ADR: `ADR-<yyyyMMdd>-<nn>_<SLUG>.md`
+- Bug: `BUG-<DOMAIN>-<nnn>_<SLUG>.md` under `docs/ai/bugs/` or `docs/ai/<DOMAIN>/bugs/`
+
+## Placement rules
+
+- Design / Implementation / Roadmap / Refactor Plan / ADR docs **must** live under `docs/ai/<DOMAIN>/` (domain bucket = Feature domain, ALL CAPS).
+- Do **not** put those long docs in `docs/ai/` root.
+- `docs/ai/` root is reserved for core collaboration truth files only.
+- Template examples belong only under `docs/ai/templates/`.
+- Session notes should be stored in `docs/ai/sessions/` when used.
