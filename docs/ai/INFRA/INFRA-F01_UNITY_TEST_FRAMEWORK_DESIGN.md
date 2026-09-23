@@ -4,10 +4,10 @@
 - **ID:** `INFRA-F01`
 - **Type:** `Feature`
 - **Complexity:** `L2`
-- **Status:** `Draft`
+- **Status:** `In Progress`
 - **Owner:** Max
 - **Last updated:** `2026-09-23`
-- **Related:** [Feature Registry](../FEATURE_REGISTRY.md) · [Verification](../../Verification.md) · [WORKFLOW_PROFILE](../WORKFLOW_PROFILE.md)
+- **Related:** [Feature Registry](../FEATURE_REGISTRY.md) · [Verification](../../Verification.md) · [WORKFLOW_PROFILE](../WORKFLOW_PROFILE.md) · [Implementation](./INFRA-F01_UNITY_TEST_FRAMEWORK_IMPLEMENTATION.md)
 
 ## TL;DR
 
@@ -171,15 +171,15 @@ docs/
 
 ## Open Questions
 
-1. 生产代码是否立即拆 asmdef，还是 Tests 暂时引用较宽程序集？— **blocking for impl plan, not for design review direction**（推荐：实现时优先最小 asmdef 拆分 Infrastructure）。
-2. 是否本阶段写 batchmode 脚本？— **no（Deferred）**，文档留接口即可。
-3. PlayMode 烟测是否纳入 F01 同一 PR？— **建议 Deferred 为 F01-S 后置切片或 INFRA-F01b**。
+1. 生产代码是否立即拆 asmdef，还是 Tests 暂时引用较宽程序集？— **Resolved：最小 Core asmdef（Locator/Events/Save）**
+2. 是否本阶段写 batchmode 脚本？— **Deferred**
+3. PlayMode 烟测是否纳入 F01 同一 PR？— **Deferred（S04）**
 
 ## Design Review
 
-- **Verdict:** `Pending`
-- **Reviewer / date:**
-- **Link or summary:**
+- **Verdict:** `Ready with deferred items`（PlayMode / batchmode 后置；实现已按 Core 方案推进）
+- **Reviewer / date:** Max / 2026-09-23（用户确认设计大体无问题后进入实现）
+- **Link or summary:** 用户指示开始逐 Feature 实现；Open Questions 按推荐决议落地
 
 ## Implementation Readiness
 
@@ -195,9 +195,9 @@ docs/
 - [x] Alternatives considered where meaningful
 - [x] Integration impact understood
 - [x] Verification strategy exists
-- [ ] Unresolved questions resolved or explicitly deferred/accepted — 待你确认 Q1/Q3
+- [x] Unresolved questions resolved or explicitly deferred/accepted
 
-**Ready for implementation?** `no` — 待设计评审通过并确认 Open Questions。
+**Ready for implementation?** `yes`
 
 ## Acceptance Checklist
 

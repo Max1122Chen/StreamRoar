@@ -12,11 +12,12 @@
 
 | Priority | Feature ID | Slice ID | Status | Owner | Next action |
 |----------|------------|----------|--------|-------|-------------|
-| 1 | `INFRA-F01` | — | Draft | Max | 设计评审（Test 框架） |
-| 2 | `INFRA-F02` | — | Draft | Max | 设计评审（GameplayTag） |
-| 3 | `INFRA-F03` | — | Draft | Max | 设计评审（Input / PlayerController） |
-| 4 | `TOOL-F01` | — | Draft | Max | 设计评审（DebugConsole）；建议 F03 后实施 |
+| 1 | `INFRA-F01` | `S01–S03` | Review | Max | Unity Test Runner 跑绿后用户 code review |
+| 2 | `INFRA-F02` | — | Draft | Max | F01 通过后开实现 |
+| 3 | `INFRA-F03` | — | Draft | Max | F01 通过后开实现 |
+| 4 | `TOOL-F01` | — | Draft | Max | F03 后实施 |
 
 ## Blocked / waiting
 
-- 全部四份 Design Spec 的 **Design Review Verdict** 仍为 `Pending`，通过前不进入 Implementation Plan。
+- `INFRA-F01-S04` PlayMode 烟测 Deferred
+- F02+ 等 F01 review 通过

@@ -11,8 +11,9 @@ Unity 项目在 `StreamRoar/`，版本见 [ProjectVersion.txt](../StreamRoar/Pro
 | UI、资源、事件、时间及服务生命周期 | [UI / Infrastructure](UI_and_Infrastructure.md) |
 | 目录、命名与作者数据归属 | [Conventions](Asset_And_Code_Conventions.md) |
 | 按改动选择验证路径 | [Verification](Verification.md) |
+| 自动化测试约定与跑法 | [Testing](Testing.md) |
 | Infrastructure API 调用示例 | [API Reference](../.agents/skills/infrastructure-usage/references/api.md) |
-| 模块完整接入契约 | [Audio](../StreamRoar/Assets/Scripts/Infrastructure/Audio/README.md) · [Save](../StreamRoar/Assets/Scripts/Infrastructure/Save/README.md) · [Pooling](../StreamRoar/Assets/Scripts/Infrastructure/Pooling/README.md) |
+| 模块完整接入契约 | [Audio](../StreamRoar/Assets/Scripts/Infrastructure/Audio/README.md) · [Save](../StreamRoar/Assets/Scripts/Infrastructure/Core/Save/README.md) · [Pooling](../StreamRoar/Assets/Scripts/Infrastructure/Pooling/README.md) |
 | Feature / 进度 / 债务（实施协作） | [docs/ai](ai/README.md) |
 | 多 Agent 适配与扩展位 | [ADAPTERS](ai/ADAPTERS.md) |
 

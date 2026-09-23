@@ -1,7 +1,7 @@
 # Infrastructure API Reference
 
 - Namespace: `StreamRoar.Infrastructure`
-- Source: `StreamRoar/Assets/Scripts/Infrastructure`
+- Source: `StreamRoar/Assets/Scripts/Infrastructure`（其中 Locator / EventBus / Save 在 `Infrastructure/Core`，程序集 `StreamRoar.Infrastructure.Core`）
 按服务标题查阅需要的 API；具体签名以源接口为准。示例中的资源 key、数据类型和监听器由调用方提供。
 
 ## ServiceLocator

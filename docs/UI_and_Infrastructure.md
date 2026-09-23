@@ -58,7 +58,7 @@ VfxService 持有 PooledVfx 池与释放计时器，退出时清理。
 [Audio README](../StreamRoar/Assets/Scripts/Infrastructure/Audio/README.md) 说明 AudioPreset、AudioBus、
 2D/3D/跟随播放及停止责任。Mixer 参数缺失是配置错误；Audio 当前不负责偏好持久化。
 
-[Save README](../StreamRoar/Assets/Scripts/Infrastructure/Save/README.md) 说明 JSON 文件契约。
+[Save README](../StreamRoar/Assets/Scripts/Infrastructure/Core/Save/README.md) 说明 JSON 文件契约。
 默认 JsonSaveService 目录为 persistentDataPath/Saves；先序列化和写临时文件，再替换正式文件。
 缺失文件与损坏数据分开处理；退出只注销服务，不自动保存。
 
