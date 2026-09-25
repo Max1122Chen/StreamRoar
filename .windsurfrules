@@ -1,0 +1,38 @@
+# Windsurf Rules: StreamRoar
+
+## Dual-track
+
+- Product truth: `docs/` + `AGENTS.md`
+- Collaboration truth: `docs/ai/`
+- Adapters: `docs/ai/ADAPTERS.md`
+
+### Startup sequence
+1. `docs/ai/WORKFLOW_PROFILE.md` — if `unconfigured`, ask meta-question once
+2. `docs/ai/PROJECT_CONTEXT.md`
+3. `AGENTS.md`
+4. `docs/ai/PROGRESS_LOG.md` (latest)
+5. `docs/ai/ACTIVE_WORK.md`
+6. `docs/ai/FEATURE_REGISTRY.md` (In Progress / Planned)
+
+Preset catalog: `docs/ai/templates/WORKFLOW_PRESETS.md`.  
+`reconfigure workflow` re-runs the profile flow.
+
+### Planning trust
+HIGH TRUST: ACTIVE_WORK, FEATURE_REGISTRY (In Progress/Planned), TECH_DEBT (Open), recent PROGRESS_LOG, code + Verification.md  
+REFERENCE ONLY: old roadmaps, Snapshot/Archived docs, stale checklists
+
+### Hard constraints
+- **NO git commit** without explicit user instruction
+- **Register Feature ID** before substantial implementation (`<DOMAIN>-F<nn>`)
+- **Prepare commit = draft only**
+- **Code/verification > stale docs**
+- **Honor WORKFLOW_PROFILE.md** (serious-engineering, zh, dual-track, smoke-required)
+- **L2+ design loop**: engineering-design → design-review → readiness
+- Daily small fixes stay lightweight per `AGENTS.md`
+
+### ID formats
+- Feature: `<DOMAIN>-F<nn>` → `INFRA-F01` (INFRA/UI/GAME/AUDIO/CFG/TOOL/ASSET)
+- Slice: `<FeatureID>-S<nn>`
+- Bug: `BUG-<DOMAIN>-<nnn>`
+- ADR: `ADR-<yyyyMMdd>-<nn>`
+- Design/Impl: ALL CAPS under `docs/ai/<DOMAIN>/`

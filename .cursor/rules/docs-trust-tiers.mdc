@@ -1,0 +1,30 @@
+---
+description: Define which docs can drive planning versus reference-only docs.
+alwaysApply: true
+---
+
+# Docs Trust Tiers
+
+## Planning sources (high trust)
+
+- `docs/ai/ACTIVE_WORK.md`
+- `docs/ai/FEATURE_REGISTRY.md` (In Progress / Planned)
+- `docs/ai/TECH_DEBT.md` (Open)
+- recent `docs/ai/PROGRESS_LOG.md`
+- code, tests, and verify commands (`docs/Verification.md`)
+
+## Product truth (dual-track; architecture guidance, not auto-backlog)
+
+- `docs/` architecture/conventions/verification
+- root `AGENTS.md` ownership and lightweight daily-fix rules
+- Use for how the system works; do **not** turn ROADMAP tables into the active queue until registered in `FEATURE_REGISTRY.md`
+
+## Reference sources (do not auto-create backlog)
+
+- old roadmap files (including `Infrastructure/ROADMAP.md` until a Feature is registered)
+- docs explicitly marked Snapshot, Archived, or Reference
+- stale unchecked checklist sections in historical design docs
+
+## Conflict resolution
+
+If docs conflict with runtime truth, code/tests/verification outputs take precedence.

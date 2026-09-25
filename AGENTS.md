@@ -20,7 +20,7 @@
   `MAC_ExportConfig.sh` / `WIN_ExportConfig.bat`；生成代码在 `StreamRoar/Assets/ScriptsGenerated/Configs/`，不手改。
   当前仅有测试表，配置服务尚未接入启动流程。
 
-## 关键边界
+## 归属边界
 
 - ApplicationController 负责应用服务的创建、注册、推进与释放；UIRuntimeBootstrap 负责 UI 装配。
 - 同一字段保持单一权威：C# 管行为，Prefab 管接线，Unity 资产管作者资源，配置表管已接入的数据。
@@ -39,6 +39,26 @@
 - 只有变更使现有说明失真，或产生代码难以表达的长期决策时，更新最相关的一处文档。
   日常修复无需配套报告、ADR、日志或多文档同步；有跨模块取舍时简记原因即可，不把文档作为实施前置审批。
 
+## 协作工作流（docs/ai）
+
+实施协作（Feature / Slice / 进度 / 债务 / 会话）在 `docs/ai/`。会话开始先读：
+
+1. `docs/ai/WORKFLOW_PROFILE.md`（当前：严肃工程 + partner + 中文 + dual-track）
+2. `docs/ai/PROJECT_CONTEXT.md`、`ACTIVE_WORK.md`、`FEATURE_REGISTRY.md`
+3. 本文件与任务相关的 `docs/` 产品文档
+
+硬约束（不可被 profile 关闭）：
+
+- 「准备提交」只起草，不执行 `git commit` / push，除非用户明确要求执行
+- 规划只信任 `ACTIVE_WORK`、registry 的 In Progress/Planned、开放 TECH_DEBT、近期 PROGRESS_LOG、代码与验证
+- 不要从旧 ROADMAP / Snapshot 自动推断 backlog
+- 实质性工作评估 L0–L3；L2+：Design → Design Review → readiness → 再大规模编码；L3 架构安全门禁必做
+- `Draft` / `Not ready` 不授权大改
+
+ID：`<DOMAIN>-F<nn>` / `<FeatureID>-S<nn>` / `BUG-<DOMAIN>-<nnn>` / `ADR-<yyyyMMdd>-<nn>`。  
+Domain 与多 Agent 适配见 `docs/ai/PROJECT_CONTEXT.md`、`docs/ai/ADAPTERS.md`。  
+重配姿态：`reconfigure workflow`。
+
 ## 按需参考
 
 | 任务 | 入口 |
@@ -48,3 +68,5 @@
 | UI、资源及服务生命周期 | [UI / Infrastructure](docs/UI_and_Infrastructure.md) |
 | 目录与命名 | [Conventions](docs/Asset_And_Code_Conventions.md) |
 | 受影响路径的验收 | [Verification](docs/Verification.md) |
+| Feature / 进度 / 债务 | [docs/ai](docs/ai/README.md) |
+| 多 Agent 适配 | [ADAPTERS](docs/ai/ADAPTERS.md) |
