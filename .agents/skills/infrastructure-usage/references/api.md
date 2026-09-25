@@ -20,6 +20,31 @@ IEventBus events = ServiceLocator.Resolve<IEventBus>();
 ServiceLocator.Unregister<IEventBus>(eventBus);
 ```
 
+## IGameplayTagManager / GameplayTagContainer
+
+分层语义标签。路径在启动时由 `IGameplayTagSource` 注册后密封；运行时禁止动态注册。
+
+| API | 说明 |
+| --- | --- |
+| `RequestTag(string path)` | 严格解析；未知抛错 |
+| `TryRequestTag(string path, out GameplayTag tag)` | 尝试解析 |
+| `GetPath` / `IsChildOf` / `GetAllTags` | 调试与层级查询 |
+| `GameplayTagContainer.Has(tag)` | 精确拥有 |
+| `Has(tag, includeChildren, manager)` | 显式父子匹配 |
+
+```csharp
+IGameplayTagManager tags = ServiceLocator.Resolve<IGameplayTagManager>();
+GameplayTag burn = tags.RequestTag(NativeGameplayTagSource.StateDebuffBurn);
+var container = new GameplayTagContainer();
+container.Add(burn);
+bool hasDebuff = container.Has(
+    tags.RequestTag(NativeGameplayTagSource.StateDebuff),
+    includeChildren: true,
+    tags);
+```
+
+模块说明见 [Tags README](../../../StreamRoar/Assets/Scripts/Infrastructure/Tags/README.md)。
+
 ## IAssetProvider
 
 按 key 加载运行时资源，实例化仍由调用方负责。
