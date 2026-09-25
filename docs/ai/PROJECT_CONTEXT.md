@@ -45,8 +45,9 @@ Next milestone:
 ## 5) Verification baseline
 
 - Build/verify command: 打开 Unity 工程 `StreamRoar/`，确认导入/编译无新错误；工具路径必须指向本仓库该目录
+- EditMode tests: Window → General → Test Runner → `Assets/Tests/Editor`（约定见 `docs/Testing.md`）
 - Smoke test command: 从 `Launch.unity` 进入 Play Mode，等待 YooAsset/UI 就绪并进入 SampleScene；退出后检查 Console；细节菜单见 `docs/Verification.md`
-- Note: `dotnet build` / 静态搜索 **不能** 证明 Unity 运行行为；无自动化测试套件时 `verification_bar=smoke-required`
+- Note: `dotnet build` / 静态搜索 **不能** 证明 Unity 运行行为；已覆盖的 Infrastructure 契约以 EditMode 为准，其余模块在无用例前仍为 `smoke-required`
 
 ## 6) Optional dual-track docs mode
 
