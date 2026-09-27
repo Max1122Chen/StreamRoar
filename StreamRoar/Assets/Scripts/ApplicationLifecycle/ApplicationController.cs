@@ -47,6 +47,7 @@ namespace StreamRoar.ApplicationLifecycle
         VfxService m_Vfx;
         SceneNavigator m_SceneNavigator;
         IGameplayTagManager m_Tags;
+        IDebugConsole m_Console;
         UIRuntimeBootstrap m_UiBootstrap;
         bool m_RuntimeStarted;
 
@@ -64,6 +65,7 @@ namespace StreamRoar.ApplicationLifecycle
             m_Vfx = new VfxService(m_Assets, m_Timer, m_RuntimeRoot);
             m_SceneNavigator = new SceneNavigator(m_EventBus);
             m_Tags = GameplayTagManager.Create(new NativeGameplayTagSource());
+            m_Console = CreateDebugConsole();
             m_UiBootstrap = GetComponent<UIRuntimeBootstrap>();
             ServiceLocator.Register(m_Timer);
             ServiceLocator.Register(m_GameTime);
@@ -74,6 +76,7 @@ namespace StreamRoar.ApplicationLifecycle
             ServiceLocator.Register<IVfxService>(m_Vfx);
             ServiceLocator.Register<ISceneNavigator>(m_SceneNavigator);
             ServiceLocator.Register(m_Tags);
+            ServiceLocator.Register(m_Console);
         }
 
         async void Start()
@@ -112,6 +115,7 @@ namespace StreamRoar.ApplicationLifecycle
             ServiceLocator.Unregister<IVfxService>(m_Vfx);
             ServiceLocator.Unregister<ISceneNavigator>(m_SceneNavigator);
             ServiceLocator.Unregister(m_Tags);
+            ServiceLocator.Unregister(m_Console);
             m_SceneNavigator.Dispose();
             m_EventBus.Clear();
             m_Vfx.Dispose();
@@ -121,6 +125,21 @@ namespace StreamRoar.ApplicationLifecycle
             {
                 disposableAssets.Dispose();
             }
+        }
+
+        IDebugConsole CreateDebugConsole()
+        {
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            var console = new DebugConsole();
+            MetaConsoleCommands.RegisterAll(console, console.Registry);
+            DebugConsoleView view = gameObject.GetComponent<DebugConsoleView>();
+            if (view == null)
+                view = gameObject.AddComponent<DebugConsoleView>();
+            view.Bind(console);
+            return console;
+#else
+            return new NoopDebugConsole();
+#endif
         }
 
         IAssetProvider CreateAssetProvider()

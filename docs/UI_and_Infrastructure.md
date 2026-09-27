@@ -15,6 +15,8 @@
 | ISceneNavigator | 加载场景并转发事件；当前未实现完整加载界面、取消和恢复流程 |
 | IAudioService | 播放、跟随、Mixer 音量与 AudioSource 复用；循环声音由消费者 Stop |
 | ISaveService | 同步读写完整数据；业务默认值、保存时机与版本迁移归消费者 |
+| IGameplayTagManager | 启动密封注册；运行时只解析与查询，禁止动态注册 |
+| IDebugConsole | 开发期命令 REPL；Editor/Development 为真实现+OnGUI，Shipping 为 Noop；域命令自行 Register，不进 UISystemConfig |
 
 上述服务由 ApplicationController 装配。IUIService 由 UIManager 注册，实际实现为 UIElementManager。
 IConfigProvider 与 ICursorService 当前未接入启动；接口存在不代表可直接 Resolve，见 [Architecture](Architecture.md)。
