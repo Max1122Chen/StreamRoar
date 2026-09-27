@@ -12,12 +12,12 @@
 
 | Priority | Feature ID | Slice ID | Status | Owner | Next action |
 |----------|------------|----------|--------|-------|-------------|
-| 1 | `INFRA-F01` | `S01–S03` | Review | Max | Unity Test Runner 跑绿后用户 code review |
-| 2 | `INFRA-F02` | — | Draft | Max | F01 通过后开实现 |
-| 3 | `INFRA-F03` | — | Draft | Max | F01 通过后开实现 |
-| 4 | `TOOL-F01` | — | Draft | Max | F03 后实施 |
+| 1 | `INFRA-F02` | `S01–S04` | Review | Max | Unity 跑 `GameplayTagTests` + 用户 review |
+| 2 | `INFRA-F03` | — | Draft | Max | F02 通过后开实现 |
+| 3 | `TOOL-F01` | — | Draft | Max | F03 后实施 |
 
-## Blocked / waiting
+## Recently done
 
-- `INFRA-F01-S04` PlayMode 烟测 Deferred
-- F02+ 等 F01 review 通过
+| Feature ID | Notes |
+|------------|-------|
+| `INFRA-F01` | EditMode 测试约定落地；用户确认全绿 |

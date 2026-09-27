@@ -4,15 +4,28 @@
 
 ## 2026-09-23
 
+- Scope: `INFRA-F02` / `S01–S04`
+- Completed:
+  - 新增 `Infrastructure/Tags`：Tag / Manager / Container / Native Source / Source 扩展点
+  - `ApplicationController` 注册 `IGameplayTagManager`
+  - EditMode：`GameplayTagTests`
+  - 文档：Tags README、Architecture / Conventions / API 索引；F01 标 Done
+- Verification:
+  - 待用户 Unity Test Runner 跑 `GameplayTagTests`
+- Next action:
+  - 用户 review F02；通过后开始 `INFRA-F03`
+
+## 2026-09-23
+
 - Scope: `INFRA-F01` 调整
 - Completed:
   - 撤销 `Infrastructure/Core` 拆分，恢复伙伴原有 Events/Save/ServiceLocator 布局
   - 测试改挂 `Assets/Tests/Editor/`（Editor 程序集），去掉生产 asmdef
   - `ClearForTests` 保留为测试专用公开 API
 - Verification:
-  - 待 Unity 编译 + Test Runner
+  - 用户确认 EditMode 测试全绿
 - Next action:
-  - 用户 review F01 后继续 F02
+  - 开始 `INFRA-F02`
 
 ## 2026-09-23
 

@@ -4,10 +4,10 @@
 - **ID:** `INFRA-F02`
 - **Type:** `Feature`
 - **Complexity:** `L2`
-- **Status:** `Draft`
+- **Status:** `In Progress`
 - **Owner:** Max
 - **Last updated:** `2026-09-23`
-- **Related:** [Feature Registry](../FEATURE_REGISTRY.md) · [Configuration](../../Configuration_Architecture.md) · INFRA-F01 · TOOL-F01
+- **Related:** [Feature Registry](../FEATURE_REGISTRY.md) · [Configuration](../../Configuration_Architecture.md) · [Implementation](./INFRA-F02_GAMEPLAY_TAG_IMPLEMENTATION.md) · INFRA-F01 · TOOL-F01
 
 ## TL;DR
 
@@ -176,16 +176,16 @@ Infrastructure/Tags/
 
 ## Open Questions
 
-1. Container 用 `struct` 还是 `class`？— **建议 class**（避免大容器复制）待确认。
-2. 是否允许运行时动态注册 Tag？— **默认否**。
-3. 父匹配默认开还是 API 显式参数？— **建议显式参数，避免静默扩大命中**。
-4. 是否本 Feature 内做 ScriptableObject 作者表（非 Luban）？— **可选 S 切片，非必须**。
+1. Container 用 `struct` 还是 `class`？— **Resolved：`class`**
+2. 是否允许运行时动态注册 Tag？— **Resolved：否（密封）**
+3. 父匹配默认开还是 API 显式参数？— **Resolved：显式 `includeChildren`**
+4. 是否本 Feature 内做 ScriptableObject 作者表？— **Deferred**
 
 ## Design Review
 
-- **Verdict:** `Pending`
-- **Reviewer / date:**
-- **Link or summary:**
+- **Verdict:** `Ready with deferred items`（SO 表后置；实现按推荐决议）
+- **Reviewer / date:** Max / 2026-09-23（F01 通过后进入实现）
+- **Link or summary:** Open Questions 已按设计推荐锁定
 
 ## Implementation Readiness
 
@@ -201,9 +201,9 @@ Infrastructure/Tags/
 - [x] Alternatives considered where meaningful
 - [x] Integration impact understood
 - [x] Verification strategy exists
-- [ ] Open Questions 由你确认
+- [x] Unresolved questions resolved or explicitly deferred/accepted
 
-**Ready for implementation?** `no` — 待评审。
+**Ready for implementation?** `yes`
 
 ## Acceptance Checklist
 
