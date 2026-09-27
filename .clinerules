@@ -1,0 +1,49 @@
+# Cline Rules: StreamRoar
+
+## Doc hierarchy (dual-track)
+
+- Product: `docs/` + root `AGENTS.md`
+- Collaboration: `docs/ai/`
+- Adapters: `docs/ai/ADAPTERS.md`
+
+### Session start — read order
+1. `docs/ai/WORKFLOW_PROFILE.md` — if `unconfigured`, ask meta-question once
+2. `docs/ai/PROJECT_CONTEXT.md`
+3. `AGENTS.md`
+4. `docs/ai/PROGRESS_LOG.md`
+5. `docs/ai/ACTIVE_WORK.md`
+6. `docs/ai/FEATURE_REGISTRY.md`
+
+Preset catalog: `docs/ai/templates/WORKFLOW_PRESETS.md`.  
+`reconfigure workflow` re-runs the profile flow.
+
+### Trusted planning sources
+- `docs/ai/ACTIVE_WORK.md`
+- `docs/ai/FEATURE_REGISTRY.md` (In Progress / Planned)
+- `docs/ai/TECH_DEBT.md` (Open)
+- Recent `docs/ai/PROGRESS_LOG.md`
+- Code + `docs/Verification.md`
+
+### Reference-only (no backlog inference)
+- Old roadmap/snapshot/archived docs (including Infrastructure ROADMAP until registered)
+- Stale unchecked checklist sections
+
+## Hard constraints
+
+1. **Commit gate**: Prepare commit = draft only. Never commit without explicit approval.
+2. **Feature registration**: Register Feature ID before large code edits.
+3. **Refactor discipline**: Clear end state; register debt for transitional code.
+4. **Doc priority**: Code/tests/verification win over stale docs.
+5. **Profile**: Honor `WORKFLOW_PROFILE.md` (serious-engineering, zh, dual-track, smoke-required); cannot disable commit gate, trust tiers, or L3 safety.
+6. **Design loop**: L2+ use engineering-design → design-review → readiness.
+7. **Daily fixes**: Lightweight per `AGENTS.md` unless L2+ / cross-module.
+
+## ID scheme
+
+| Type | Format | Example |
+|------|--------|---------|
+| Feature | `<DOMAIN>-F<nn>` | `INFRA-F01` |
+| Slice | `<FeatureID>-S<nn>` | `INFRA-F01-S01` |
+| Bug | `BUG-<DOMAIN>-<nnn>` | `BUG-INFRA-001` |
+| ADR | `ADR-<yyyyMMdd>-<nn>` | `ADR-20260923-01` |
+| Design/Impl | `docs/ai/<DOMAIN>/<FEATURE_ID>_<SLUG>_DESIGN.md` | ALL CAPS |

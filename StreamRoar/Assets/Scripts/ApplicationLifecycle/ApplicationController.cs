@@ -46,6 +46,7 @@ namespace StreamRoar.ApplicationLifecycle
         ISaveService m_Save;
         VfxService m_Vfx;
         SceneNavigator m_SceneNavigator;
+        IGameplayTagManager m_Tags;
         UIRuntimeBootstrap m_UiBootstrap;
         bool m_RuntimeStarted;
 
@@ -62,6 +63,7 @@ namespace StreamRoar.ApplicationLifecycle
             m_Save = new JsonSaveService(Path.Combine(Application.persistentDataPath, "Saves"));
             m_Vfx = new VfxService(m_Assets, m_Timer, m_RuntimeRoot);
             m_SceneNavigator = new SceneNavigator(m_EventBus);
+            m_Tags = GameplayTagManager.Create(new NativeGameplayTagSource());
             m_UiBootstrap = GetComponent<UIRuntimeBootstrap>();
             ServiceLocator.Register(m_Timer);
             ServiceLocator.Register(m_GameTime);
@@ -71,6 +73,7 @@ namespace StreamRoar.ApplicationLifecycle
             ServiceLocator.Register(m_Save);
             ServiceLocator.Register<IVfxService>(m_Vfx);
             ServiceLocator.Register<ISceneNavigator>(m_SceneNavigator);
+            ServiceLocator.Register(m_Tags);
         }
 
         async void Start()
@@ -108,6 +111,7 @@ namespace StreamRoar.ApplicationLifecycle
             ServiceLocator.Unregister(m_Save);
             ServiceLocator.Unregister<IVfxService>(m_Vfx);
             ServiceLocator.Unregister<ISceneNavigator>(m_SceneNavigator);
+            ServiceLocator.Unregister(m_Tags);
             m_SceneNavigator.Dispose();
             m_EventBus.Clear();
             m_Vfx.Dispose();

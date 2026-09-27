@@ -1,0 +1,32 @@
+---
+description: Lightweight trigger rules for when to invoke workflow artifacts.
+alwaysApply: true
+---
+
+# Docs Workflow Triggers
+
+When user intent implies one of these, recommend the corresponding workflow before large edits:
+
+- Plan/roadmap/priorities:
+  - check `ACTIVE_WORK.md`, `FEATURE_REGISTRY.md`, and trusted sources
+- New feature/refactor:
+  - assess complexity L0–L3; register Feature ID when substantial
+  - L2+: Design (`engineering-design`) → Design Review → readiness → Implementation Plan
+  - L3: readiness gate mandatory before large coding
+- Significant unknown scope:
+  - perform a brief pre-flight (dependencies, risks, debt, verification path) — required when profile says so
+  - discover existing architecture before inventing structure
+- Bug/regression:
+  - create/update bug record with reproduction and regression checks
+- Design review / implementation readiness:
+  - use `design-review`; record verdict; do not large-code on `Not ready` / `Draft`
+- Handoff/session switch:
+  - session note + progress entry + blocked/deferred status for incomplete slices
+- End of meaningful batch:
+  - complete DoD checks, then propose "prepare commit"
+- Commit preparation request:
+  - draft commit message and wait for explicit execute instruction
+- Profile `unconfigured` on first substantial work:
+  - ask meta-question once (`docs/ai/WORKFLOW_PROFILE.md` + `templates/WORKFLOW_PRESETS.md`)
+- User says `reconfigure workflow`:
+  - re-run profile flow and update `WORKFLOW_PROFILE.md`

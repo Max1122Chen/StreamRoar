@@ -1,0 +1,30 @@
+---
+description: Non-negotiable collaboration and commit safety constraints.
+alwaysApply: true
+---
+
+# Hard Constraints
+
+## 1) Commit preparation gate
+
+- "Prepare commit" means draft message and readiness checks, not immediate commit.
+- Never run `git commit` or push without explicit user instruction to execute.
+- Draft from actual diffs, not from guessed intent.
+
+## 2) Planning source discipline
+
+- Use trusted planning sources first: `docs/ai/ACTIVE_WORK.md`, `FEATURE_REGISTRY.md`, `TECH_DEBT.md`, recent `PROGRESS_LOG.md`, code/tests.
+- Do not infer backlog from snapshot/archive/reference docs.
+
+## 3) Refactor discipline
+
+- Refactor work should target a clear end state.
+- Avoid leaving silent dual-path temporary layers; either remove or register debt.
+
+## 4) Context recovery
+
+When context may be stale, re-bootstrap from:
+- `docs/ai/WORKFLOW_PROFILE.md`
+- `docs/ai/BOOTSTRAP_DIGEST.md`
+- `docs/ai/PROJECT_CONTEXT.md`
+- `docs/ai/ACTIVE_WORK.md`

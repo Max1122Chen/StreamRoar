@@ -1,0 +1,39 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "AGENTS.md",
+    "docs/ai/WORKFLOW_PROFILE.md",
+    "docs/ai/PROJECT_CONTEXT.md",
+    "docs/ai/BOOTSTRAP_DIGEST.md",
+    "docs/ai/WORKING_WITH_AI.md",
+    "docs/ai/ADAPTERS.md",
+    "docs/ai/templates/DOC_GOVERNANCE.md",
+    "docs/ai/templates/WORKFLOW_PRESETS.md"
+  ],
+  "command": {
+    "bootstrap": {
+      "template": "Read docs/ai/WORKFLOW_PROFILE.md, docs/ai/PROJECT_CONTEXT.md, docs/ai/PROGRESS_LOG.md, and docs/ai/ACTIVE_WORK.md. If profile is unconfigured, ask the meta-question once. Otherwise summarize posture + current state and propose next step with verification command.",
+      "description": "Session start: recover context"
+    },
+    "reconfigure-workflow": {
+      "template": "Re-run the workflow profile flow using docs/ai/templates/WORKFLOW_PRESETS.md. Ask the meta-question, apply preset or custom dimensions, update docs/ai/WORKFLOW_PROFILE.md, and summarize what changed.",
+      "description": "Reconfigure collaboration posture"
+    },
+    "design": {
+      "template": "Assess complexity L0–L3. For non-trivial work, follow .opencode/skills/engineering-design/SKILL.md: discover existing architecture, separate requirements from proposed solutions, write/update the Design Spec under docs/ai/<DOMAIN>/ using the design template, then run design-review when L2+.",
+      "description": "Engineering design before implementation"
+    },
+    "design-review": {
+      "template": "Review the active Design Spec using .opencode/skills/design-review/SKILL.md. Record verdict Ready / Ready with deferred items / Not ready. Do not start large implementation on Not ready.",
+      "description": "Design review and implementation readiness"
+    },
+    "handoff": {
+      "template": "Append today's work to docs/ai/PROGRESS_LOG.md using the progress log entry template. Create a session note. Mark incomplete slices as Blocked/Deferred with reason. Provide the first concrete action for the next session.",
+      "description": "Session end: handoff preparation"
+    },
+    "register-feature": {
+      "template": "Register a new feature ID in docs/ai/FEATURE_REGISTRY.md using the <DOMAIN>-F<nn> scheme. Find the next available number for the given domain. Assess complexity and link Design Spec path when known.",
+      "description": "Register a new Feature ID"
+    }
+  }
+}

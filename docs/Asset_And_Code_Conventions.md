@@ -9,7 +9,7 @@
 | `Assets/ResourcesAssets/` | YooAsset 运行时资源，当前包含 Audio、Configs 与 UI 目录 |
 | `Assets/Scripts/ApplicationLifecycle/` | 组合根与启动 |
 | `Assets/Scripts/Gameplay/` | 业务代码接入位置，目前尚无业务脚本 |
-| `Assets/Scripts/Infrastructure/` | 资源、配置、事件、计时、池、UI、VFX、Audio、Save、场景与光标 |
+| `Assets/Scripts/Infrastructure/` | 资源、配置、事件、计时、池、UI、VFX、Audio、Save、场景、光标与 GameplayTag |
 | `Assets/ScriptsGenerated/Configs/` | Luban 生成代码 |
 
 ## 命名与代码
