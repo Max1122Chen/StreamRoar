@@ -68,5 +68,6 @@ Domain 与多 Agent 适配见 `docs/ai/PROJECT_CONTEXT.md`、`docs/ai/ADAPTERS.m
 | UI、资源及服务生命周期 | [UI / Infrastructure](docs/UI_and_Infrastructure.md) |
 | 目录与命名 | [Conventions](docs/Asset_And_Code_Conventions.md) |
 | 受影响路径的验收 | [Verification](docs/Verification.md) |
+| 自动化测试约定 | [Testing](docs/Testing.md) |
 | Feature / 进度 / 债务 | [docs/ai](docs/ai/README.md) |
 | 多 Agent 适配 | [ADAPTERS](docs/ai/ADAPTERS.md) |

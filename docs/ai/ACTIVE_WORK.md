@@ -12,4 +12,12 @@
 
 | Priority | Feature ID | Slice ID | Status | Owner | Next action |
 |----------|------------|----------|--------|-------|-------------|
-| — | — | — | — | — | 队列为空；选定下一里程碑后先注册 Feature 再入队 |
+| 1 | `INFRA-F02` | `S01–S04` | Review | Max | Unity 跑 `GameplayTagTests` + 用户 review |
+| 2 | `INFRA-F03` | — | Draft | Max | F02 通过后开实现 |
+| 3 | `TOOL-F01` | — | Draft | Max | F03 后实施 |
+
+## Recently done
+
+| Feature ID | Notes |
+|------------|-------|
+| `INFRA-F01` | EditMode 测试约定落地；用户确认全绿 |
