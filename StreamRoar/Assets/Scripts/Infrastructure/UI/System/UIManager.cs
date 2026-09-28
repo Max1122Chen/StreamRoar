@@ -10,7 +10,7 @@ namespace StreamRoar.Infrastructure
     /// </summary>
     [DisallowMultipleComponent]
     [RequireComponent(typeof(UIElementManager))]
-    public sealed class UIManager : MonoBehaviour, IEventListener<SceneLoadedEvent>
+    public sealed class UIManager : MonoBehaviour
     {
         [Header("流程")]
         [Tooltip("按 ESC 时尝试关闭顶部可返回元素")]
@@ -37,7 +37,7 @@ namespace StreamRoar.Infrastructure
         /// </summary>
         void OnDestroy()
         {
-            m_EventBus.Unsubscribe<SceneLoadedEvent>(this);
+            m_EventBus.Unsubscribe<SceneLoadedEvent>(OnEvent);
             ServiceLocator.Unregister<IUIService>(m_ElementManager);
         }
 
@@ -62,14 +62,14 @@ namespace StreamRoar.Infrastructure
             m_EventBus = ServiceLocator.Resolve<IEventBus>();
             ServiceLocator.Register<IUIService>(m_ElementManager);
             ApplySceneScope(SceneManager.GetActiveScene().name, false);
-            m_EventBus.Subscribe<SceneLoadedEvent>(this);
+            m_EventBus.Subscribe<SceneLoadedEvent>(OnEvent);
             m_Booted = true;
         }
 
         /// <summary>
         /// 场景切换后重新应用 UI 作用域。
         /// </summary>
-        public void OnEvent(SceneLoadedEvent eventData)
+        private void OnEvent(SceneLoadedEvent eventData)
         {
             m_ElementManager.RefreshCanvasSettings();
             ApplySceneScope(eventData.Scene.name, true);

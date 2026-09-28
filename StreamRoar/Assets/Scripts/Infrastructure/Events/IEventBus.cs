@@ -1,3 +1,5 @@
+using System;
+
 namespace StreamRoar.Infrastructure
 {
     /// <summary>
@@ -8,22 +10,22 @@ namespace StreamRoar.Infrastructure
         /// <summary>
         /// 订阅指定类型事件。
         /// </summary>
-        void Subscribe<TEvent>(IEventListener<TEvent> listener) where TEvent : struct, IEvent;
+        void Subscribe<TEvent>(Action<TEvent> listener) where TEvent : struct, IEvent;
 
         /// <summary>
         /// 订阅指定作用域的类型事件。
         /// </summary>
-        void Subscribe<TEvent>(object scope, IEventListener<TEvent> listener) where TEvent : struct, IEvent;
+        void Subscribe<TEvent>(object scope, Action<TEvent> listener) where TEvent : struct, IEvent;
 
         /// <summary>
         /// 取消指定类型事件订阅。
         /// </summary>
-        void Unsubscribe<TEvent>(IEventListener<TEvent> listener) where TEvent : struct, IEvent;
+        void Unsubscribe<TEvent>(Action<TEvent> listener) where TEvent : struct, IEvent;
 
         /// <summary>
         /// 取消指定作用域的类型事件订阅。
         /// </summary>
-        void Unsubscribe<TEvent>(object scope, IEventListener<TEvent> listener) where TEvent : struct, IEvent;
+        void Unsubscribe<TEvent>(object scope, Action<TEvent> listener) where TEvent : struct, IEvent;
 
         /// <summary>
         /// 同步发布指定类型事件。

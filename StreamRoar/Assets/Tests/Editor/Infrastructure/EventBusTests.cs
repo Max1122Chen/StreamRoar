@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using StreamRoar.Infrastructure;
 
 namespace StreamRoar.Tests.Editor.Infrastructure
@@ -24,13 +25,14 @@ namespace StreamRoar.Tests.Editor.Infrastructure
         [Test]
         public void Publish_NotifiesGlobalSubscriber()
         {
-            var listener = new RecordingListener();
-            m_Bus.Subscribe<SampleEvent>(listener);
+            int count = 0;
+            int lastValue = 0;
+            m_Bus.Subscribe<SampleEvent>(e => { count++; lastValue = e.Value; });
 
             m_Bus.Publish(new SampleEvent { Value = 7 });
 
-            Assert.That(listener.Count, Is.EqualTo(1));
-            Assert.That(listener.LastValue, Is.EqualTo(7));
+            Assert.That(count, Is.EqualTo(1));
+            Assert.That(lastValue, Is.EqualTo(7));
         }
 
         [Test]
@@ -38,56 +40,45 @@ namespace StreamRoar.Tests.Editor.Infrastructure
         {
             var scopeA = new object();
             var scopeB = new object();
-            var listenerA = new RecordingListener();
-            var listenerB = new RecordingListener();
-            m_Bus.Subscribe(scopeA, listenerA);
-            m_Bus.Subscribe(scopeB, listenerB);
+            int countA = 0;
+            int countB = 0;
+            m_Bus.Subscribe<SampleEvent>(scopeA, e => countA++);
+            m_Bus.Subscribe<SampleEvent>(scopeB, e => countB++);
 
             m_Bus.Publish(scopeA, new SampleEvent { Value = 3 });
 
-            Assert.That(listenerA.Count, Is.EqualTo(1));
-            Assert.That(listenerB.Count, Is.EqualTo(0));
+            Assert.That(countA, Is.EqualTo(1));
+            Assert.That(countB, Is.EqualTo(0));
         }
 
         [Test]
         public void Unsubscribe_StopsFurtherNotifications()
         {
-            var listener = new RecordingListener();
-            m_Bus.Subscribe<SampleEvent>(listener);
-            m_Bus.Unsubscribe<SampleEvent>(listener);
+            int count = 0;
+            Action<SampleEvent> handler = e => count++;
+            m_Bus.Subscribe<SampleEvent>(handler);
+            m_Bus.Unsubscribe<SampleEvent>(handler);
 
             m_Bus.Publish(new SampleEvent { Value = 1 });
 
-            Assert.That(listener.Count, Is.EqualTo(0));
+            Assert.That(count, Is.EqualTo(0));
         }
 
         [Test]
         public void Clear_RemovesAllSubscriptions()
         {
-            var listener = new RecordingListener();
-            m_Bus.Subscribe<SampleEvent>(listener);
+            int count = 0;
+            m_Bus.Subscribe<SampleEvent>(e => count++);
             m_Bus.Clear();
 
             m_Bus.Publish(new SampleEvent { Value = 2 });
 
-            Assert.That(listener.Count, Is.EqualTo(0));
+            Assert.That(count, Is.EqualTo(0));
         }
 
         struct SampleEvent : IEvent
         {
             public int Value;
-        }
-
-        sealed class RecordingListener : IEventListener<SampleEvent>
-        {
-            public int Count { get; private set; }
-            public int LastValue { get; private set; }
-
-            public void OnEvent(SampleEvent eventData)
-            {
-                Count++;
-                LastValue = eventData.Value;
-            }
         }
     }
 }
