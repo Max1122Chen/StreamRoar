@@ -7,7 +7,7 @@
 | 改动 | 合适的证据 |
 | --- | --- |
 | 纯文档、技能说明 | 路径和链接、代码事实、指令是否冲突；无需启动 Unity |
-| Infrastructure Core 契约（Locator / EventBus / Save 等） | **优先** `Assets/Tests/Editor` 相关 EditMode 用例全绿；再按需补手工路径 |
+| Infrastructure Core 契约（Locator / EventBus / Save / Tag / DebugConsole 等） | **优先** `Assets/Tests/Editor` 相关 EditMode 用例全绿；再按需补手工路径 |
 | 其他 C# 行为 | Unity 导入/编译，以及受影响的最小 Editor 或 Play Mode 路径 |
 | Prefab、场景等序列化资产 | Unity 加载/反序列化、受影响引用与运行行为 |
 | 运行时生命周期 | 创建、禁用/释放、重新绑定或复用中受影响的路径 |
@@ -20,7 +20,7 @@ rg、YAML 和 dotnet build 均不证明运行时正确。MSB3644 表示缺少引
 
 - 路径：`Assets/Tests/Editor/`（Editor 程序集，不改动 Infrastructure 目录结构）
 - 入口：Window → General → Test Runner → EditMode
-- 样板覆盖：`ServiceLocator`、`EventBus`、`JsonSaveService`
+- 样板覆盖：`ServiceLocator`、`EventBus`、`JsonSaveService`、`GameplayTag`、`DebugConsole`
 - 规则全文：[Testing](Testing.md)
 
 ## 运行入口
@@ -40,6 +40,7 @@ rg、YAML 和 dotnet build 均不证明运行时正确。MSB3644 表示缺少引
 | VFX | 复用模式、延迟释放、跟随目标失效和池复用后状态 |
 | Audio | 播放/停止、跟随目标失效、循环音频释放、Mixer 路由与音量 |
 | Save | 缺失与损坏数据区分、覆盖失败保留旧文件；用独立临时数据，目标平台/AOT 按需求验证；契约回归见 EditMode |
+| DebugConsole | EditMode `DebugConsoleTests`；Play 从 Launch 进 SampleScene 后按 `` ` `` 开关，试 `help`/`echo`/`clear`；Shipping 无面板 |
 | 配置接入 | 接入 Tables 构造及 IConfigProvider 注册后，再验证 TbTest 加载、查询和退出注销 |
 
 Prefab 专项按改动检查组件、挂点、层、嵌套实例、变体与场景覆盖。

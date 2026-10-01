@@ -4,7 +4,7 @@
 
 | Debt ID | Status | Area | Summary | Impact | Owner | Opened | Revisit date | Exit condition |
 |---------|--------|------|---------|--------|-------|--------|--------------|----------------|
-| — | — | — | — | — | — | — | — | 暂无登记项 |
+| `DEBT-TOOL-001` | Open | TOOL-F01 / Input | DebugConsoleView 用 Input System `Keyboard` 读 `` ` `` Toggle，未走 IMC_Console | 与 INFRA-F03 规矩临时不一致；Console 开时未 AddMappingContext | Max | 2026-09-27 | F03 落地后 | F03 提供 `IMC_Console` 后，Toggle/历史/提交改走 IMC；删除 View 内过渡读键 |
 
 ## Status
 

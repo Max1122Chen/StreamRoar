@@ -45,6 +45,30 @@ bool hasDebuff = container.Has(
 
 模块说明见 [Tags README](../../../StreamRoar/Assets/Scripts/Infrastructure/Tags/README.md)。
 
+## IDebugConsole
+
+开发期命令 REPL（OnGUI）。Editor / Development Build 为真实现；Shipping 为 `NoopDebugConsole`。
+内核仅带元命令 `help` / `clear` / `echo`；域命令在各系统启动时 `Register`。
+
+| API | 说明 |
+| --- | --- |
+| `Open` / `Close` / `Toggle` / `IsOpen` | 面板开关（`` ` `` Toggle，IMC 前过渡读键） |
+| `TryExecute(line, out error)` | 分词 → 签名校验 → 同步执行 |
+| `Register(IConsoleCommand)` | 注册域命令；重复名抛错 |
+| `WriteLine` / `WriteError` / `ClearOutput` | 输出缓冲 |
+| `GetCompletionCandidates` / `SuggestCompletion` | 命令名实时候选；Tab 接受选中项 |
+| `TryGetCommandHelp` | 提示条短帮助 |
+
+```csharp
+IDebugConsole console = ServiceLocator.Resolve<IDebugConsole>();
+console.Register(new DelegateConsoleCommand(
+    "demo.ping",
+    "ping",
+    ConsoleArgSchema.None,
+    (_, w) => w.WriteLine("pong")));
+console.TryExecute("demo.ping", out _);
+```
+
 ## IAssetProvider
 
 按 key 加载运行时资源，实例化仍由调用方负责。

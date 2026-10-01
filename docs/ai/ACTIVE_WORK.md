@@ -12,9 +12,9 @@
 
 | Priority | Feature ID | Slice ID | Status | Owner | Next action |
 |----------|------------|----------|--------|-------|-------------|
-| 1 | `INFRA-F02` | `S01–S04` | Review | Max | Unity 跑 `GameplayTagTests` + 用户 review |
-| 2 | `INFRA-F03` | — | Draft | Max | F02 通过后开实现 |
-| 3 | `TOOL-F01` | — | Draft | Max | F03 后实施 |
+| 1 | `TOOL-F01` | `S01–S03` | Review | Max | Unity 跑 `DebugConsoleTests` + Play 烟测 `` ` `` |
+| 2 | `INFRA-F02` | `S01–S04` | Review | Max | Unity 跑 `GameplayTagTests` + 用户 review |
+| 3 | `INFRA-F03` | — | Draft | Max | 暂停；Console 不阻塞 |
 
 ## Recently done
 
